@@ -41,10 +41,11 @@ $ kubectl create -f cafe.yaml
     ```
 4. Create an Ingress Resource:
 
-    Update the `appprotect.f5.com/app-protect-security-log-destination` annotation from `cafe-ingress.yaml` with the ClusterIP of the syslog service. For example, if the IP is `10.101.21.110`:
+    Update the `appprotect.f5.com/app-protect-security-log-destination` annotation from `cafe-ingress.yaml` with the FQDN of the syslog service. 
+    For example, if the service name is `syslog-svc` and it is in the `default` namespace (You can also use the service ClusterIP):
     ```yaml
     . . .
-    appprotect.f5.com/app-protect-security-log-destination: "syslog:server=10.101.21.110:514"
+    appprotect.f5.com/app-protect-security-log-destination: "syslog:server=syslog-svc.default:514"
     ```
     Create the Ingress Resource:
     ```
