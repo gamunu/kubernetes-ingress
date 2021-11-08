@@ -111,7 +111,7 @@ func ValidateAppProtectLogDestination(dstAntn string) error {
 	}
 
 	if net.ParseIP(ipstr) == nil {
-		return fmt.Errorf("Error parsing host: %v is not a valid ip address", ipstr)
+		return fmt.Errorf("Error parsing host: %v is not a valid ip address or host name", ipstr)
 	}
 
 	return nil
