@@ -88,7 +88,7 @@ debian-image-plus: build ## Create Docker image for Ingress Controller (nginx pl
 
 .PHONY: debian-image-nap-plus
 debian-image-nap-plus: build ## Create Docker image for Ingress Controller (nginx plus with nap)
-	$(DOCKER_CMD) $(PLUS_ARGS) --build-arg BUILD_OS=debian-plus-nap
+	$(DOCKER_CMD) $(PLUS_ARGS) --build-arg BUILD_OS=debian-plus-nap --build-arg DEBIAN_VERSION=buster-slim
 
 .PHONY: openshift-image
 openshift-image: build ## Create Docker image for Ingress Controller (ubi)
